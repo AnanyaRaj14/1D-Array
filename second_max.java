@@ -1,3 +1,5 @@
+
+// ************************************************* NOT COMPLETE ****************************************************
 import java.util.Scanner;
 public class second_max{
     public static void main(String[] args){
@@ -11,25 +13,36 @@ public class second_max{
             arr[i] = in.nextInt();
         }
 
+
+
+        int finalAns = findSecondMax(arr);
+        System.out.print("the second max element of the array is : " + findSecondMax(arr));
     }
 
 
-    static int repeate(int[] arr){
-        // int ans = -1;
-        for(int i =0; i<arr.length; i++){
-            for(int j=i+1; j<arr.length; j++){
-                if(arr[i] == arr[j] ){
-                  arr[i] = arr[j] = -1;  
-                }
+   
+    static int findSecondMax(int[] arr){
+        int ans = findMax(arr);
+
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i] == ans){
+                arr[i] = Integer.MIN_VALUE;
             }
         }
         
-        int ans = 0;
+        int secondMax = findMax(arr);
+        return secondMax;
+    }
+
+    static int findMax(int[] arr){
+        int mx = Integer.MIN_VALUE;
         for(int i =0; i<arr.length; i++){
-            if(arr[i] != -1){
-                ans = arr[i];
+            if(arr[i]>mx){
+                mx = arr[i];
             }
         }
-        return ans;
+        return mx;
     }
+
 }
+    
