@@ -14,7 +14,7 @@ public class sort_array{
 
         
 
-        sortedArray(arr);
+       int[] nums =  sortedArray(arr);
         System.out.println("the sorted array is: " );
         for(int i=0; i<arr.length; i++){
             System.out.print(arr[i] + " ");
@@ -24,7 +24,16 @@ public class sort_array{
     }
 
 
-    static void sortedArray(int[] arr){
-        Arrays.sort(arr);     
+    static int[] sortedArray(int[] arr){
+        for(int i = 0; i<arr.length; i++){
+            for(int j=0; j<arr.length; j++){
+                if(arr[i]<arr[j]){
+                    int temp = arr[i];
+                    arr[i] =arr[j];
+                    arr[j] = temp;
+                }
+            }
+        } 
+        return arr;   
     }
 }
