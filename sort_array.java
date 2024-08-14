@@ -15,7 +15,7 @@ public class sort_array{
         
 
        int[] nums =  sortedArray(arr);
-        System.out.println("the sorted array is: " );
+        System.out.println("the sorted array is: " + n);
         for(int i=0; i<arr.length; i++){
             System.out.print(arr[i] + " ");
         }

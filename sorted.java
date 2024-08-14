@@ -15,7 +15,7 @@ public class sorted{
         //     System.out.print(arr[i] + " ");
         // }
 
-       
+       isSorted(arr);
         System.out.print("the given array is sorted: " + isSorted(arr));
 
         
